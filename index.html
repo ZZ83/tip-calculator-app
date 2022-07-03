@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-
-  <script src="script.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<title>Frontend Mentor | Tip calculator app</title>
+	</head>
+	<body>
+		<header>
+			<img src="images/logo.svg" alt="">
+		</header>
+		<main>
+			<section>
+				<label for="bill">Bill</label>
+				<input type="text" name="" id="bill">
+				<h2>Select Tip %</h2>
+				<ul>
+					<li><a href="">5%</a></li> 
+					<li><a href="">10%</a></li>
+					<li><a href="">15%</a></li>
+					<li><a href="">25%</a></li>
+					<li><a href="">50%</a></li>
+					<li><a href="">Custom</a></li>	
+				</ul>
+				<label for="people">Number of People</label>
+				<input type="text" name="" id="people">
+			</section>
+			<section>
+				<div>
+					<h2>Tip Amount<br><small>&nbsp;/ person</small></h2>
+					<span>$4.27</span>
+				</div>
+				<div>
+					<h2>Total<br><small>&nbsp;/ person</small></h2>
+					<span>$32.79</span>
+				</div>
+				<button>Reset</button>
+			</section>
+		</main>
+		<footer>
+			<p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</p>
+		</footer>
+	<script src="script.js"></script>
+	</body>
 </html>
