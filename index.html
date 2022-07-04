@@ -4,20 +4,26 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/styles.css">
 		<title>Frontend Mentor | Tip calculator app</title>
 	</head>
 	<body>
+		<!-- HEADER -->
 		<header>
 			<img src="images/logo.svg" alt="">
 		</header>
+		<!-- MAIN -->
 		<main>
-			<section>
+			<!-- BILL SECTION -->
+			<section class="bill">
 				<label for="bill">Bill</label>
-				<input type="text" name="" id="bill">
+				<input id="bill" type="text" name="" >
 				<h2>Select Tip %</h2>
-				<ul>
+				<ul class="percentage">
 					<li><a href="">5%</a></li> 
 					<li><a href="">10%</a></li>
 					<li><a href="">15%</a></li>
@@ -28,7 +34,7 @@
 				<label for="people">Number of People</label>
 				<input type="text" name="" id="people">
 			</section>
-
+			<!-- TIP SECTION -->
 			<section class="tip">
 				<div>
 					<h2>Tip Amount<br><small>&nbsp;/ person</small></h2>
@@ -41,6 +47,7 @@
 				<button>Reset</button>
 			</section>
 		</main>
+		<!-- FOOTER -->
 		<footer>
 			<p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</p>
 		</footer>

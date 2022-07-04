@@ -1,5 +1,16 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
 html {
     background-color: #C5E4E7;
+}
+
+body {
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
 }
 
 main {
@@ -27,6 +38,20 @@ header {
         height: 305px;
     }
     main {
+        height: 481px;
         max-width: 920px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .bill {
+        width: 379px;
+        height: 388px;
+        background-color: orange;
+    }
+
+    .tip {
+        width: 413px;
+        height: 417px;
     }
 }
