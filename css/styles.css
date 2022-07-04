@@ -1,0 +1,32 @@
+html {
+    background-color: #C5E4E7;
+}
+
+main {
+    background-color: #fff;
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+
+header {
+    height: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tip {
+    background-color: #00474B;
+    border-radius: 25px;
+}
+
+
+@media (min-width: 920px) { 
+    header {
+        height: 305px;
+    }
+    main {
+        max-width: 920px;
+    }
+}
