@@ -17,45 +17,42 @@
 			<img src="images/logo.svg" alt="">
 		</header>
 		<!-- MAIN -->
-		<main>
-			<!-- BILL SECTION -->
-			<section class="bill wrapper">
-				<label for="bill">Bill</label>
-				<input class="bill__dollar" type="text" id="bill" dir="rtl" maxlength="15" placeholder="0">
-				<h2>Select Tip %</h2>
-				<!-- PERCENT BUTTONS-->
-				<div class="percent">
-					<button>5%</button>
-					<button>10%</button>
-					<button>15%</button>
-					<button>25%</button>
-					<button>50%</button>
-					<input class="custom" type="text" dir="rtl" placeholder="Custom"></li>	
-				</div>
-				<label for="people">Number of People</label>
-				<input class="bill__people" type="text" id="people" dir="rtl" maxlength="2" placeholder="0">
-			</section>
-
-			<!-- TIP SECTION -->
-			<section class="tip wrapper">
-
-				<div class="tip__per">
-					<h2>Tip Amount<br><small>/ person</small></h2>
-					<span>$0.00</span>
-				</div>
-
-				<div class="tip__per">
-					<h2>Total<br><small>/ person</small></h2>
-					<span>$0.00</span>
-				</div>
-
-				<button class="tip__button">RESET</button>
-			</section>
-
-		</main>
+		<div class="sticky-wrapper">
+			<main>
+				<!-- BILL SECTION -->
+				<section class="bill wrapper">
+					<label for="bill">Bill</label>
+					<input class="bill__dollar" type="text" id="bill" dir="rtl" maxlength="15" placeholder="0">
+					<h2>Select Tip %</h2>
+					<!-- PERCENT BUTTONS-->
+					<div class="percent">
+						<button>5%</button>
+						<button>10%</button>
+						<button>15%</button>
+						<button>25%</button>
+						<button>50%</button>
+						<input class="custom" type="text" dir="rtl" placeholder="Custom"></li>	
+					</div>
+					<label for="people">Number of People</label>
+					<input class="bill__people" type="text" id="people" dir="rtl" maxlength="2" placeholder="0">
+				</section>
+				<!-- TIP SECTION -->
+				<section class="tip wrapper">
+					<div class="tip__per">
+						<h2>Tip Amount<br><small>/ person</small></h2>
+						<span>$0.00</span>
+					</div>
+					<div class="tip__per">
+						<h2>Total<br><small>/ person</small></h2>
+						<span>$0.00</span>
+					</div>
+					<button class="tip__button" type="button" disabled>RESET</button>
+				</section>
+			</main>
+		</div>
 		<!-- FOOTER -->
-		<footer>
-			<p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</p>
+		<footer class="wrapper">
+			<p>Designed by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://www.frontendmentor.io/profile/ZZ83" target="_blank">Zekel Keys</a>.</p>
 		</footer>
 	<script src="script.js"></script>
 	</body>

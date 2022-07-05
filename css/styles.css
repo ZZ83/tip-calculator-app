@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+header,
+footer {
+    flex-shrink: 0;
+}
+
 html {
     background-color: #C5E4E7;
 }
@@ -14,10 +19,22 @@ html {
 body {
     font-weight: 700;
     font-family: 'Space Mono', monospace;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h2 {
     font-size: 1rem;
+}
+
+a {
+    color: #00474B;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #26C2AE;
 }
 
 span {
@@ -63,6 +80,7 @@ main {
     padding-bottom: 2rem;
     border-radius: 25px;
     background-color: #fff;
+    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
 }
 
 button {
@@ -86,9 +104,22 @@ button:hover {
     background-color: #9FE8DF;
 }
 
+footer {
+    height: 8rem;
+    text-align: center;
+    line-height: 1.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*************************************  
 HELPER STYLES  
 **************************************/
+.sticky-wrapper {
+    flex-grow: 1; 
+}
+
 .wrapper {
     width: 85%;
     margin: 0 auto;
@@ -167,6 +198,11 @@ TIP STYLES
         color: #00474B;
         background-color: #26C2AE;
     }
+    .tip__button:disabled {
+        cursor: not-allowed;
+        background-color: #0D686D;
+    }
+
 
 /*************************************  
 MEDIA QUERIES
@@ -177,6 +213,7 @@ MEDIA QUERIES
     }
 
     main {
+        width: 1440px;
         height: 481px;
         max-width: 920px;
         padding-bottom: 0;
