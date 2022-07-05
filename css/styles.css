@@ -22,7 +22,11 @@ h2 {
 
 span {
     color: #26C2AE;
-    font-size: 48px;
+    font-size: 32px;
+}
+
+small {
+    color: #7F9D9F;
 }
 
 label {
@@ -56,6 +60,7 @@ header {
 main {
     max-width: 420px;
     margin: 0 auto;
+    padding-bottom: 2rem;
     border-radius: 25px;
     background-color: #fff;
 }
@@ -136,9 +141,32 @@ PERCENTAGE AND CUSTOM STYLES
 TIP STYLES  
 **************************************/
 .tip {
-    background-color: #00474B;
+    height: 257px;
+    margin: 2rem auto;
     border-radius: 25px;
+    background-color: #00474B;
+    padding-top: 2.3rem;
 }
+    .tip__per,
+    .tip__button {
+        width: 90%;
+    }
+    .tip__per {
+        height: 3rem;
+        margin: 0 auto;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .tip__per:first-child {
+        margin-bottom: 1.2rem;
+    }
+    .tip__button {
+        margin: 2.2rem auto 0;
+        color: #00474B;
+        background-color: #26C2AE;
+    }
 
 /*************************************  
 MEDIA QUERIES
@@ -151,9 +179,14 @@ MEDIA QUERIES
     main {
         height: 481px;
         max-width: 920px;
+        padding-bottom: 0;
         display: flex;
         align-items: center;
         justify-content: space-around;
+    }
+
+    span {
+        font-size: 48px;
     }
 
     button,
@@ -170,5 +203,18 @@ MEDIA QUERIES
     .tip {
         width: 413px;
         height: 417px;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 3.5rem;
     }
+        .tip__per,
+        .tip__button {
+            width: 80%;
+        }
+        .tip__per:first-child {
+            margin-bottom: 3.1rem;
+        }
+        .tip__button {
+           margin-top: 8rem;
+        }
 }

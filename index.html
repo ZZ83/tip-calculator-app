@@ -18,12 +18,12 @@
 		</header>
 		<!-- MAIN -->
 		<main>
-
 			<!-- BILL SECTION -->
 			<section class="bill wrapper">
 				<label for="bill">Bill</label>
 				<input class="bill__dollar" type="text" id="bill" dir="rtl" maxlength="15" placeholder="0">
 				<h2>Select Tip %</h2>
+				<!-- PERCENT BUTTONS-->
 				<div class="percent">
 					<button>5%</button>
 					<button>10%</button>
@@ -38,16 +38,20 @@
 
 			<!-- TIP SECTION -->
 			<section class="tip wrapper">
-				<div>
-					<h2>Tip Amount<br><small>&nbsp;/ person</small></h2>
-					<span>$4.27</span>
+
+				<div class="tip__per">
+					<h2>Tip Amount<br><small>/ person</small></h2>
+					<span>$0.00</span>
 				</div>
-				<div>
-					<h2>Total<br><small>&nbsp;/ person</small></h2>
-					<span>$32.79</span>
+
+				<div class="tip__per">
+					<h2>Total<br><small>/ person</small></h2>
+					<span>$0.00</span>
 				</div>
-				<button>Reset</button>
+
+				<button class="tip__button">RESET</button>
 			</section>
+
 		</main>
 		<!-- FOOTER -->
 		<footer>
