@@ -1,3 +1,6 @@
+/*************************************  
+ BASE STYLES  
+**************************************/
 *,
 *:after,
 *:before {
@@ -26,10 +29,28 @@ label {
     display: block;
 }
 
+a {
+    width:100%;
+    height: 3rem;
+    color: #fff;
+    background: #00474B;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 1.1rem;
+}
+
+a:hover {
+    color: #00474B;
+    background-color: #9FE8DF;
+}
+
 input {
     width: 100%;
     height: 48px;
-    margin-top: 0.8rem;
     padding-right: 1rem;
     font-size: 24px;
     border-radius: 10px;
@@ -45,14 +66,14 @@ input:focus {
 }
 
 main {
-    background-color: #fff;
     max-width: 420px;
     margin: 0 auto;
     border-radius: 25px;
+    background-color: #fff;
 }
 
 ul {
-    margin: 0;
+    margin:  0;
     padding: 0;
     list-style-type: none;
 }
@@ -64,38 +85,68 @@ header {
     justify-content: center;
 }
 
+/*************************************  
+HELPER STYLES  
+**************************************/
+
 .wrapper {
     width: 85%;
     margin: 0 auto;
 }
 
+.active {
+    color: #00474B;
+    background-color: #26C2AE;
+}
+
+/*************************************  
+BILL STYLES  
+**************************************/
 .bill {
-    padding-top: 1rem;
-    /* background-color: orange; */
+    padding-top: 2rem;
 }
     .bill__dollar,
     .bill__people {
+        margin-top: 0.8rem;
         background-repeat: no-repeat;
         background-position: 1rem center;
     }
     .bill__dollar {
+        margin-bottom: 1.5rem;
         background-image: url(../images/icon-dollar.svg);
     }
     .bill__people {
         background-image: url(../images/icon-person.svg);
     }
+    .bill h2,
+    .bill label {
+        color: #5E7A7D;
+    }
 
-
-.bill h2,
-.bill label {
-    color: #5E7A7D;
+/*************************************  
+PERCENTAGE AND CUSTOM STYLES  
+**************************************/
+.percent {
+    margin: 1.3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+    .percent__link {
+        width: 47%;
+    }
 
+/*************************************  
+TIP STYLES  
+**************************************/
 .tip {
     background-color: #00474B;
     border-radius: 25px;
 }
 
+/*************************************  
+MEDIA QUERIES
+**************************************/
 @media (min-width: 920px) { 
     header {
         height: 305px;
@@ -113,6 +164,10 @@ header {
         padding-top: 0;
         width: 379px;
         height: 388px;
+    }
+
+    .percent__link {
+        width: 117px;
     }
 
     .tip {
