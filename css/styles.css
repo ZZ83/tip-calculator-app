@@ -67,6 +67,11 @@ input {
     caret-color: #26C2AE;
 }
 
+input:focus {
+    outline: none;
+    border: 2px solid #26C2AE;
+}
+
 header {
     height: 145px;
     display: flex;

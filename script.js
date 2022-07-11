@@ -1,14 +1,18 @@
 let bill = 0;
 let tipAmmount = 0;
-let tipPercentage = 0;
-let totalPerPerson = 0
-let numberOfPeople = 1;
+let tipPercentage = 0.05;
+let totalPerPerson = 0;
+let numberOfPeople = 0;
 
 const billInput        = document.querySelector("#bill");
 const customInput      = document.querySelector(".custom");
 const resetButton      = document.querySelector(".tip__button");
 const percentButtons   = document.querySelector(".percent");
 const numOfPeopleInput = document.querySelector("#people");
+
+
+const ammount    = document.querySelector("#tip-ammount");
+const finalTotal = document.querySelector("#final-total");
 
 
 //FUNCTIONS ------------------------------------------------------------------------
@@ -28,11 +32,51 @@ function validate(event) {
     event.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
 }
 
+function checkIfEmpty()  {
+    if(numOfPeopleInput.value === "0") {
+        numOfPeopleInput.style.border = "2px solid #E17457";
+        numOfPeopleInput.previousElementSibling.classList.add("error");
+        numOfPeopleInput.previousElementSibling.firstElementChild.style.display = "initial";
+    } else {
+        numOfPeopleInput.style.border = "none";
+        numOfPeopleInput.previousElementSibling.classList.remove("error");
+        numOfPeopleInput.previousElementSibling.firstElementChild.style.display = "none";
+    }
+}
+
+function total() {
+    tipAmmount = bill * tipPercentage / numberOfPeople;
+    totalPerPerson = bill / numberOfPeople + tipAmmount;
+    ammount.innerHTML    = `$${tipAmmount.toFixed(2)}`;
+    finalTotal.innerHTML = `$${totalPerPerson.toFixed(2)}`;
+}
+
+function toggleReset() {
+    if(resetButton.hasAttribute("disabled")) {
+        resetButton.disabled = false;
+        console.log("Disabled set to false")
+    } else {
+        resetButton.disabled = true;
+        console.log("Disabled set to true")
+    }
+}
+
 //EVENT LISTENERS ------------------------------------------------------------------
-customInput.addEventListener("keyup",  function() {
+billInput.addEventListener("input", function() {
+    bill = parseFloat(billInput.value);
+    console.log("Bill:", bill);
+    console.log("Tip Percentage:", tipPercentage);
+    console.log("Number of People:", numberOfPeople);
+    total();
+})
+
+customInput.addEventListener("input",  function() {
     tipPercentage = parseInt(customInput.value);
     tipPercentage = tipPercentage / 100;
-    console.log(tipPercentage);
+});
+
+numOfPeopleInput.addEventListener("input",  function() {
+  numberOfPeople = parseFloat(numOfPeopleInput.value);
 });
 
 percentButtons.addEventListener("click",  function(event) {
@@ -41,29 +85,12 @@ percentButtons.addEventListener("click",  function(event) {
         addActiveClass(event.target);
         tipPercentage = parseInt( event.target.innerHTML.slice(0, -1) );
         tipPercentage = tipPercentage / 100;
-        console.log(tipPercentage);
-    }
-});
-
-
-
-numOfPeopleInput.addEventListener("keyup",  function() {
-    if (isFinite(numOfPeopleInput.value)) {
-        console.log(numOfPeopleInput.value)
-
-
-
-        if(numOfPeopleInput.value === "0" ) {
-            showError();
-            console.log("Please type a number Greater then 0");
-            numOfPeopleInput.setAttribute("maxlength", "1")
-        }
-      7
+       
     }
 });
 
 resetButton.addEventListener("click",  function() {
-    console.log("Reset Button");
+    toggleReset();
 });
 
 
@@ -105,45 +132,79 @@ resetButton.addEventListener("click",  function() {
 
 
 
-function validCharatersOnly(input) {
-    // Prevents unvalid charaters from being typed into the input field
-    const splitValue     = input.value.split('');
-    const validCharaters = new RegExp('\\d|\\.');
-    const filteredSplitValue = splitValue.map(function(character) {
-        if(!validCharaters.test(character)) {
-            return '';
-        }
-        return character;
-    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function validCharatersOnly(input) {
+//     const splitValue     = input.value.split('');
+//     const validCharaters = new RegExp('\\d|\\.');
+//     const filteredSplitValue = splitValue.map(function(character) {
+//         if(!validCharaters.test(character)) {
+//             return '';
+//         }
+//         return character;
+//     });
     
-    let x = filteredSplitValue.join('');
+//     let x = filteredSplitValue.join('');
 
-    if (x[0] === "." && x[x.length -1] === "." && x.length > 1) {
-        x = x.slice(0, -1);
-        input.value = x.join("");
-    } else if (x[x.length -1] === "." && x[0] !== ".") {
-        let y = x.slice(0, -1);
-        if(y.includes(".")) {
-            x = x.slice(0, -1);
-            input.value = x.join("");
-        }
-    }
-}
+//     if (x[0] === "." && x[x.length -1] === "." && x.length > 1) {
+//         x = x.slice(0, -1);
+//         input.value = x.join("");
+//     } else if (x[x.length -1] === "." && x[0] !== ".") {
+//         let y = x.slice(0, -1);
+//         if(y.includes(".")) {
+//             x = x.slice(0, -1);
+//             input.value = x.join("");
+//         }
+//     }
+// }
 
-
-
-
-function checkIfEmpty()  {
-    if(numOfPeopleInput.value === "" || numOfPeopleInput.value === 0) {
-        console.log("Show Error Message");
-    }
-}
-
-function showError() {
-    numOfPeopleInput.style.border = "2px solid #E17457";
-    numOfPeopleInput.previousElementSibling.classList.add("error");
-    numOfPeopleInput.previousElementSibling.firstElementChild.style.display = "initial";
-}
 
 
 
@@ -154,14 +215,14 @@ function showError() {
 
 
   
-billInput.addEventListener("input", function(event) {
-    validate(billInput);
-    validCharatersOnly(billInput)
+// billInput.addEventListener("input", function(event) {
+//     validate(billInput);
+//     validCharatersOnly(billInput)
 
-    checkIfEmpty();
-    showError();
+//     checkIfEmpty();
+//     showError();
 
-});
+// });
 
 
 
