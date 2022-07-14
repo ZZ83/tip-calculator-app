@@ -32,6 +32,12 @@ function removeActiveClass() {
     })
 };
 
+function checkForZero(input){
+    if(input.value.startsWith("0")) {
+        input.value = "0";
+    }
+}
+
 function resetElements() {
     ammount.innerHTML    = `$0.00`;
     finalTotal.innerHTML = `$0.00`;
@@ -77,6 +83,7 @@ function isEmpty()  {
 
 //EVENT LISTENERS ------------------------------------------------------------------
 billInput.addEventListener("input", function() {
+    checkForZero(billInput);
     limitDecimalPlaces(billInput);
     hasValidCharaters(billInput, isNumberOrDecimal)
     bill = parseFloat(billInput.value);
@@ -86,13 +93,13 @@ billInput.addEventListener("input", function() {
         resetElements();
         resetButton.disabled = true;
     }
-
     if( billInput.value !== "") {
         resetButton.disabled = false;
     }
 })
 
 customInput.addEventListener("input",  function() {
+    checkForZero(customInput);
     hasValidCharaters(customInput, isNumber);
     tipPercentage = parseInt(customInput.value);
     tipPercentage = tipPercentage / 100;
@@ -104,6 +111,7 @@ customInput.addEventListener("input",  function() {
 });
 
 numOfPeopleInput.addEventListener("input",  function() {
+    checkForZero(numOfPeopleInput);
     hasValidCharaters(numOfPeopleInput, isNumber);
     numberOfPeople = parseFloat(numOfPeopleInput.value);
     calculateTotals()
@@ -132,7 +140,7 @@ resetButton.addEventListener("click",  function() {
     numOfPeopleInput.value = 1;
     isEmpty();
     removeActiveClass();
-    addActiveClass(percentButtons.firstElementChild);
+    addClassTo(percentButtons.firstElementChild, "active");
 });
 
 
