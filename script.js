@@ -64,7 +64,11 @@ function hasValidCharaters(input, reg) {
         }
         return character;
     });
-    input.value = filteredSplitValue.join('');
+    const match = input.value.match(/[-+]?\d*\.?\d*/);
+    if (match || input.value === '') {
+        last = match ? match[0] : '';
+    }
+    input.value = last;
 }
 
 function isEmpty()  {
@@ -83,7 +87,6 @@ function isEmpty()  {
 
 //EVENT LISTENERS ------------------------------------------------------------------
 billInput.addEventListener("input", function() {
-    checkForZero(billInput);
     limitDecimalPlaces(billInput);
     hasValidCharaters(billInput, isNumberOrDecimal)
     bill = parseFloat(billInput.value);
